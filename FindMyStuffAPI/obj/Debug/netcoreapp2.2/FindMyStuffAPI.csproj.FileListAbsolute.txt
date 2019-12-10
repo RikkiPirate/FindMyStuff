@@ -12,3 +12,17 @@ C:\Users\A418559\source\repos\Jose\FindMyStuff\FindMyStuff\FindMyStuffAPI\obj\De
 C:\Users\A418559\source\repos\Jose\FindMyStuff\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.RazorTargetAssemblyInfo.cache
 C:\Users\A418559\source\repos\Jose\FindMyStuff\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.dll
 C:\Users\A418559\source\repos\Jose\FindMyStuff\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.pdb
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuffAPI.deps.json
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuffAPI.runtimeconfig.json
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuffAPI.runtimeconfig.dev.json
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuffAPI.dll
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuffAPI.pdb
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.csprojAssemblyReference.cache
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.csproj.CoreCompileInputs.cache
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.RazorAssemblyInfo.cache
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.RazorAssemblyInfo.cs
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.AssemblyInfoInputs.cache
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.AssemblyInfo.cs
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.RazorTargetAssemblyInfo.cache
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.dll
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuffAPI.pdb
