@@ -714,21 +714,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\n380106\\.nuget\\packages\\": {}
+    "C:\\Users\\A418559\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
       "projectName": "FindMyStuff.Mobile.iOS",
-      "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\n380106\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\obj\\",
+      "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
+      "packagesPath": "C:\\Users\\A418559\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\n380106\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\A418559\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -740,8 +745,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
-              "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj"
+            "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
+              "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj"
             }
           }
         }
