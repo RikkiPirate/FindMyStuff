@@ -6,6 +6,7 @@ C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.And
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\mscorlib.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Core.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.dll
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Runtime.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Xml.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Xml.Linq.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\Xamarin.Android.Arch.Core.Common.dll
@@ -35,6 +36,7 @@ C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.And
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Data.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Numerics.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Transactions.dll
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.Drawing.Common.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.IO.Compression.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.IO.Compression.FileSystem.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyStuff", "FindMyStuff\FindMyStuff.csproj", "{8FFBD82C-5B87-4505-AB63-37FCAC40F801}"
 EndProject
@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Mobile.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Mobile.iOS", "FindMyStuff.Mobile\FindMyStuff.Mobile.iOS\FindMyStuff.Mobile.iOS.csproj", "{23AE3BE7-EA50-42E6-8671-6669EF7B7926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Mobile", "FindMyStuff.Mobile\FindMyStuff.Mobile\FindMyStuff.Mobile.csproj", "{5C92D128-18C9-4388-A2C1-525D30605D0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyStuff.Mobile", "FindMyStuff.Mobile\FindMyStuff.Mobile\FindMyStuff.Mobile.csproj", "{5C92D128-18C9-4388-A2C1-525D30605D0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Data", "FindMyStuff.Data\FindMyStuff.Data.csproj", "{5A774DA5-29D4-4C44-BC42-1CE2C890C667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,18 @@ Global
 		{5C92D128-18C9-4388-A2C1-525D30605D0C}.Release|iPhone.Build.0 = Release|Any CPU
 		{5C92D128-18C9-4388-A2C1-525D30605D0C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{5C92D128-18C9-4388-A2C1-525D30605D0C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|iPhone.Build.0 = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5A774DA5-29D4-4C44-BC42-1CE2C890C667}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
