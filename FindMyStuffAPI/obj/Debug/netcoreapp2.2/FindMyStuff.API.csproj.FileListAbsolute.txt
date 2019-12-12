@@ -12,3 +12,17 @@ C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\Fi
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.RazorTargetAssemblyInfo.cache
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.pdb
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.API.deps.json
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.API.runtimeconfig.json
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.API.runtimeconfig.dev.json
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.API.dll
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.API.pdb
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.csprojAssemblyReference.cache
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.csproj.CoreCompileInputs.cache
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.RazorAssemblyInfo.cache
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.RazorAssemblyInfo.cs
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.AssemblyInfoInputs.cache
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.AssemblyInfo.cs
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.RazorTargetAssemblyInfo.cache
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.dll
+C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.pdb
