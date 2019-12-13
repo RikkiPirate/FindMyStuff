@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj": {}
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj": {
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
+        "projectUniqueName": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
         "projectName": "FindMyStuff.Mobile.iOS",
-        "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
-        "packagesPath": "C:\\Users\\A418559\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\obj\\",
+        "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\FindMyStuff.Mobile.iOS.csproj",
+        "packagesPath": "C:\\Users\\n380106\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\A418559\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\n380106\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
-                "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj"
+              "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
+                "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj"
               }
             }
           }
@@ -61,21 +61,21 @@
         }
       }
     },
-    "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj",
+        "projectUniqueName": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj",
         "projectName": "FindMyStuff.Mobile",
-        "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj",
-        "packagesPath": "C:\\Users\\A418559\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\obj\\",
+        "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\FindMyStuff.Mobile.csproj",
+        "packagesPath": "C:\\Users\\n380106\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Mobile\\FindMyStuff.Mobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\A418559\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\n380106\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

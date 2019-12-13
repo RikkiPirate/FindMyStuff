@@ -26,3 +26,6 @@ C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\n
 C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.RazorTargetAssemblyInfo.cache
 C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.dll
 C:\Users\A418559\Source\Repos\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.pdb
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.Data.dll
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\bin\Debug\netcoreapp2.2\FindMyStuff.Data.pdb
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuffAPI\obj\Debug\netcoreapp2.2\FindMyStuff.API.csproj.CopyComplete

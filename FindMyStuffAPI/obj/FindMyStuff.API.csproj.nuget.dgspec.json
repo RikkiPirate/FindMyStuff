@@ -1,24 +1,82 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj": {}
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj": {
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\FindMyStuff.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj",
-        "projectName": "FindMyStuff.API",
-        "projectPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj",
-        "packagesPath": "C:\\Users\\A418559\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A418559\\Source\\Repos\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\obj\\",
+        "projectUniqueName": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\FindMyStuff.Data.csproj",
+        "projectName": "FindMyStuff.Data",
+        "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\FindMyStuff.Data.csproj",
+        "packagesPath": "C:\\Users\\n380106\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\A418559\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\n380106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj",
+        "projectName": "FindMyStuff.API",
+        "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\FindMyStuff.API.csproj",
+        "packagesPath": "C:\\Users\\n380106\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuffAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\n380106\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -31,7 +89,11 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\FindMyStuff.Data.csproj": {
+                "projectPath": "C:\\Code\\Angelo\\RikkiPirate\\FindMyStuff\\FindMyStuff.Data\\FindMyStuff.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -63,6 +125,14 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             }
           },
           "imports": [
