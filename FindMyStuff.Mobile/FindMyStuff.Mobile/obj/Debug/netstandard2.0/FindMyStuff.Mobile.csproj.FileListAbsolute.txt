@@ -1,7 +1,6 @@
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\bin\Debug\netstandard2.0\FindMyStuff.Mobile.deps.json
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\bin\Debug\netstandard2.0\FindMyStuff.Mobile.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\bin\Debug\netstandard2.0\FindMyStuff.Mobile.pdb
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\FindMyStuff.Mobile.csprojAssemblyReference.cache
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs

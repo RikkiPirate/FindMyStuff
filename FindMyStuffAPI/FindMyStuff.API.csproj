@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace />
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,11 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FindMyStuff.Data\FindMyStuff.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\Command\" />
-    <Folder Include="Controllers\Query\" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,0 @@
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\bin\Debug\netstandard2.0\FindMyStuff.Data.deps.json
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\bin\Debug\netstandard2.0\FindMyStuff.Data.dll
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\bin\Debug\netstandard2.0\FindMyStuff.Data.pdb
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.csprojAssemblyReference.cache
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.csproj.CoreCompileInputs.cache
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.AssemblyInfoInputs.cache
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.AssemblyInfo.cs
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.dll
-C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Data\obj\Debug\netstandard2.0\FindMyStuff.Data.pdb

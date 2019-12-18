@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FindMyStuff.Data;
+﻿using FindMyStuff.Data;
+using FindMyStuff.Data.Dal;
+using FindMyStuff.Data.Dal.Interfaces;
+using FindMyStuff.Data.Dal.Persistence;
+using FindMyStuff.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,15 +26,11 @@ namespace FindMyStuffAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<FindMyStuffDatabaseSettings>(
-                Configuration.GetSection(nameof(FindMyStuffDatabaseSettings)));
-
-            services.AddSingleton<IFindMyStuffDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<FindMyStuffDatabaseSettings>>().Value);
-
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" }); });
 
+            //services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddSingleton<IDocumentQueryDal, DocumentQueryDal>();
 
             services.AddCors(options =>
             {
