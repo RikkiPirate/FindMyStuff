@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FindMyStuff.Data.Dal.Interfaces;
-using FindMyStuff.Data.Entities;
+using FindMyStuff.Data.Dal.Persistence;
 using FindMyStuff.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +11,15 @@ namespace Controllers.Query
     public class DocumentController : ControllerBase
     {
         private readonly IDocumentQueryDal _documentDal;
-        
-        public DocumentController(IDocumentQueryDal settings)
+
+        public DocumentController(FindMyStuffDBContext dbContext)
         {
-            _documentDal = settings;
+            _documentDal = new DocumentQueryDal(dbContext);
         }
+
+        //public DocumentController()
+        //{
+        //}
 
         [HttpGet]
         public ActionResult<List<Document>> Get()

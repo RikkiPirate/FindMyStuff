@@ -7,9 +7,6 @@ namespace FindMyStuff.Data.Models
 {
     public partial class FindMyStuffDBContext : DbContext
     {
-        public FindMyStuffDBContext()
-        {
-        }
 
         public FindMyStuffDBContext(DbContextOptions<FindMyStuffDBContext> options)
             : base(options)
@@ -23,12 +20,10 @@ namespace FindMyStuff.Data.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                //var x = ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString;
-                //optionsBuilder.UseSqlServer(x);
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=FindMyStuffDB;Trusted_Connection=True;");
-            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=FindMyStuffDB;Trusted_Connection=True;");
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -113,4 +108,6 @@ namespace FindMyStuff.Data.Models
             });
         }
     }
+
+
 }

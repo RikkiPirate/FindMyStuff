@@ -9,9 +9,9 @@ namespace FindMyStuff.Data.Dal.Persistence
     {
         private FindMyStuffDBContext _dbContext;
 
-        public DocumentQueryDal()
+        public DocumentQueryDal(FindMyStuffDBContext findMyStuffDbContext)
         {
-            _dbContext= new FindMyStuffDBContext();
+            _dbContext=  findMyStuffDbContext;
         }
 
         public List<Document> GetDocumentsList()

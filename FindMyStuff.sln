@@ -11,28 +11,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Mobile.iOS", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyStuff.Mobile", "FindMyStuff.Mobile\FindMyStuff.Mobile\FindMyStuff.Mobile.csproj", "{5C92D128-18C9-4388-A2C1-525D30605D0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Data", "FindMyStuff.Data\FindMyStuff.Data.csproj", "{B71DF279-0010-415C-8DCC-8B4A9B860FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMyStuff.Data", "FindMyStuff.Data\FindMyStuff.Data.csproj", "{B71DF279-0010-415C-8DCC-8B4A9B860FD4}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FindMyStuff.Web", "FindMyStuff.Web\", "{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FindMyStuff(1)", "findmystuff\", "{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_60159"
-		Debug.AspNetCompiler.PhysicalPath = "FindMyStuff.Web\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60159\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59947"
+		Debug.AspNetCompiler.PhysicalPath = "findmystuff\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59947\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_60159"
-		Release.AspNetCompiler.PhysicalPath = "FindMyStuff.Web\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60159\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59947"
+		Release.AspNetCompiler.PhysicalPath = "findmystuff\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59947\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "60159"
-		SlnRelativePath = "FindMyStuff.Web\"
+		VWDPort = "59947"
+		SlnRelativePath = "findmystuff\"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyStuff.Web", "FindMyStuff.Web\FindMyStuff.Web.csproj", "{0DD783F6-9869-405B-9E0C-E1C55429B457}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,18 +110,30 @@ Global
 		{B71DF279-0010-415C-8DCC-8B4A9B860FD4}.Release|iPhone.Build.0 = Release|Any CPU
 		{B71DF279-0010-415C-8DCC-8B4A9B860FD4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{B71DF279-0010-415C-8DCC-8B4A9B860FD4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|iPhone.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|iPhone.Build.0 = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{BB798658-01C0-4BFD-B5D4-1DB9127D5A1D}.Release|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|iPhone.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|iPhone.Build.0 = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DF0CBC6F-965B-450F-8D9A-E7F20961BD64}.Release|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|iPhone.Build.0 = Release|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0DD783F6-9869-405B-9E0C-E1C55429B457}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

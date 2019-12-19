@@ -14,3 +14,4 @@ C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\FindMyStuff.Mobile.dll
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\FindMyStuff.Mobile.pdb
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile\obj\Debug\netstandard2.0\FindMyStuff.Mobile.csprojAssemblyReference.cache

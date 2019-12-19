@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using FindMyStuff.Data.Dal.Interfaces;
+using FindMyStuff.Data.Dal.Persistence;
 using FindMyStuff.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +12,11 @@ namespace Controllers.Command
     {
         private readonly IDocumentCommandDal _documentDal;
 
-        public DocumentController(IDocumentCommandDal settings)
+        public DocumentController(FindMyStuffDBContext dbContext)
         {
-            _documentDal = settings;
+            _documentDal = new DocumentCommandDal(dbContext);
         }
+
 
         [HttpPost]
         public void Post([FromBody] Document document)

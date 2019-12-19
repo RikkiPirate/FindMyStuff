@@ -7,6 +7,5 @@ namespace FindMyStuff.Data.Dal.Interfaces
     {
         List<Document> GetDocumentsList();
         Document GetDocumentItem(Document doc);
-        Document CreateDocument(Document document);
     }
 }

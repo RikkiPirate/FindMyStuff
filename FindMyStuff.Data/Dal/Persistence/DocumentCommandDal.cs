@@ -7,30 +7,43 @@ namespace FindMyStuff.Data.Dal.Persistence
 {
     public class DocumentCommandDal : IDocumentCommandDal
     {
+        private readonly FindMyStuffDBContext _dbContext;
+
+        public DocumentCommandDal(FindMyStuffDBContext findMyStuffDbContext)
+        {
+            _dbContext = findMyStuffDbContext;
+        }
+
         public Document CreateDocument(Document document)
         {
-            FindMyStuffDBContext dbContext = new FindMyStuffDBContext();
-            var x = dbContext.Document.First();
-            if (x == null)
+
+            var x = _dbContext.Document.FirstOrDefault(d =>
+                string.Equals(d.DocNumber, document.DocNumber, StringComparison.OrdinalIgnoreCase));
+            if (x != null) return x;
+            var newDocument = new Document
             {
-                dbContext.Document.Add(document);
-                dbContext.SaveChanges();
-            }
+                DocName = document.DocName,
+                DocNumber = document.DocNumber,
+                Picture = document.Picture,
+                DocumentType = document.DocumentType
+            };
+            _dbContext.Document.Add(document);
+            _dbContext.SaveChanges();
             return x;
         }
 
         public Document UpdateDocument(Document document)
         {
-            FindMyStuffDBContext dbContext = new FindMyStuffDBContext();
-            var x = dbContext.Document.First();
+
+            var x = _dbContext.Document.FirstOrDefault();
             if (x != null)
             {
                 x.DocName = !string.Equals(x.DocName, document.DocName, StringComparison.Ordinal) ? document.DocName : x.DocName;
                 x.DocumentType = document.DocumentType;
                 x.Picture = !string.Equals(x.Picture, document.Picture, StringComparison.Ordinal) ? document.Picture : x.Picture;
 
-                dbContext.Document.Add(document);
-                dbContext.SaveChanges();
+                _dbContext.Document.Add(document);
+                _dbContext.SaveChanges();
             }
             return x;
         }
