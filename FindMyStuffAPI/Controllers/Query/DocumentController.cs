@@ -2,12 +2,14 @@
 using FindMyStuff.Data.Dal.Interfaces;
 using FindMyStuff.Data.Dal.Persistence;
 using FindMyStuff.Data.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers.Query
 {
     [Route("api/query/[controller]")]
     [ApiController]
+    [EnableCors]
     public class DocumentController : ControllerBase
     {
         private readonly IDocumentQueryDal _documentDal;
@@ -16,10 +18,6 @@ namespace Controllers.Query
         {
             _documentDal = new DocumentQueryDal(dbContext);
         }
-
-        //public DocumentController()
-        //{
-        //}
 
         [HttpGet]
         public ActionResult<List<Document>> Get()
@@ -35,6 +33,10 @@ namespace Controllers.Query
             {
                 Document doc = new Document { DocNumber = docNumber };
                 var x= _documentDal.GetDocumentItem(doc);
+                if (x==null)
+                {
+                    return NotFound();
+                }
                 return Ok(x);
             }
             else

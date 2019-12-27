@@ -32,9 +32,17 @@ namespace FindMyStuffAPI
                     builder =>
                     {
                         builder.WithOrigins("http://localhost",
-                            "https://localhost:44333");
+                            "https://localhost:44333").AllowAnyOrigin();
                     });
+                //options.AddPolicy("AllowAllHeaders",
+                //    builder =>
+                //    {
+                //        builder.WithOrigins("http://localhost:3000")
+                //            .AllowAnyHeader();
+                //    });
             });
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<FindMyStuffDBContext>(options
