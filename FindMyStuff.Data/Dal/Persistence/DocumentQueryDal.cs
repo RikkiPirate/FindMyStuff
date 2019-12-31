@@ -2,6 +2,8 @@
 using System.Linq;
 using FindMyStuff.Data.Dal.Interfaces;
 using FindMyStuff.Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace FindMyStuff.Data.Dal.Persistence
 {
@@ -16,13 +18,20 @@ namespace FindMyStuff.Data.Dal.Persistence
 
         public List<Document> GetDocumentsList()
         {
-            var x = _dbContext.Document.ToList();
-            return x;
+            return _dbContext.Document.ToList();
         }
 
         public Document GetDocumentItem(Document doc)
         {
-            return _dbContext.Document.FirstOrDefault(d=>d.DocNumber==doc.DocNumber);
+            var x= _dbContext.Document
+                .Include(dxp=>dxp.DocumentXperson)
+                .ThenInclude(p=>p.Person).FirstOrDefault(d => d.DocNumber==doc.DocNumber);
+            return x;
+        }
+
+        public List<DocumentType> GetDocumentTypesList()
+        {
+            return _dbContext.DocumentType.ToList();
         }
     }
 }

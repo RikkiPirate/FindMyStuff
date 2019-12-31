@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -26,41 +26,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function setStateApp(data) {
-  _state = data;
-  console.log("appState", _state);
-  registerDocument();
-}
-
-let _state = {
-  Data: {
-    id: 0,
-    docNumber: "",
-    docName: "",
-    documentTypeId: 0,
-    picture: ""
-  },
-  ServiceResponse: {}
-};
-
-function registerDocument() {
-  // if (_state.Data.docNumber === "" && _state.id > 0) {
-  //  return <RegisterDoc data={_state.Data} show={_state.id > 0}></RegisterDoc>;
-  //} else {
-  console.log("_state", _state);
-
-  if (_state.Data.docNumber !== "") {
-    console.log(_state.Data.docNumber !== "");
-    return <ShowDoc data={_state.Data}></ShowDoc>;
-  } else {
-    return (
-      <RegisterDoc data={_state.Data} show={_state.Data.id > 0}></RegisterDoc>
-    );
-  }
-}
-
 function App() {
   const classes = useStyles();
+  const [state, setState] = useState({
+    Data: {
+      id: 0,
+      docNumber: "",
+      docName: "",
+      documentTypeId: 0,
+      picture: ""
+    },
+    ServiceResponse: {}
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -68,16 +46,18 @@ function App() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12}>
               <Paper className={classes.paper}>
-                <DocNumber setStateApp={setStateApp}></DocNumber>
+                <DocNumber setStateApp={setState}></DocNumber>
               </Paper>
             </Grid>
           </Grid>
         </div>
         <br></br>
-        {
-          _state.Data.docNumber !== "" ? <ShowDoc data={_state.Data}></ShowDoc> : <RegisterDoc data={_state.Data} show={_state.Data.id > 0}></RegisterDoc>
-        }
-        {/* {registerDocument()} */}
+
+        {state.Data.id > 0 ? (
+          <ShowDoc data={state.Data} />
+        ) : (
+          <RegisterDoc data={state} show={state.Data.id === 0} />
+        )}
       </header>
     </div>
   );

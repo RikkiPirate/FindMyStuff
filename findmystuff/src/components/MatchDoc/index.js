@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import clsx from "clsx";
+
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -35,24 +36,30 @@ const DocType = [
 ];
 
 class ShowDoc extends Component {
-  state = {
-    id: 0,
-    docNumber: "",
-    docName: "",
-    documentTypeId: 0,
-    picture: ""
-  };
-
   constructor(data) {
     super(data);
-    const { docNumber, id, docName, documentTypeId, picture } = data;
-    this.state = { docNumber, id, docName, documentTypeId, picture };
+    this.state = {
+      id: 0,
+      docNumber: "",
+      docName: "",
+      documentTypeId: 0,
+      picture: ""
+    };
+    //const { docNumber, id, docName, documentTypeId, picture } = data;
+    // this.state =  { docNumber, id, docName, documentTypeId, picture };
+
+    //console.log("from show  data state: ", props);
   }
+
   handleChange = event => {
     const documentTypeId = event.target.value;
     this.setState({ documentTypeId: documentTypeId });
-    console.log(this.state);
+    //console.log(this.state);
   };
+
+  componentWillMount() {
+    this.setState(this.props);
+  }
 
   Showdocument = (data, classes) => {
     return (
@@ -60,11 +67,11 @@ class ShowDoc extends Component {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>
-              <h4>Document Found</h4>
+              <h2>Document Found !!!!{data.docNumber}!!!! </h2>
               <TextField
                 label="Doc number:"
                 id="DocNumber"
-                defaultValue={this.state.docNumber}
+                defaultValue={data.docNumber}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
@@ -75,7 +82,7 @@ class ShowDoc extends Component {
               <TextField
                 label="Doc name:"
                 id="docName"
-                required
+                defaultValue={data.docName}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
@@ -112,27 +119,6 @@ class ShowDoc extends Component {
                   readOnly: true
                 }}
               />
-              <br></br>
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
-              />
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
-              />
             </Paper>
           </Grid>
         </Grid>
@@ -142,7 +128,7 @@ class ShowDoc extends Component {
 
   render() {
     const { classes } = this.props;
-    return this.Showdocument(this.state, classes);
+    return this.Showdocument(this.state.data, classes);
   }
 }
 
