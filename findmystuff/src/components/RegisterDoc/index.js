@@ -6,8 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import FillDropDown from "./../DropDownField";
 
-const useStyles = theme => ({});
-
 const myStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -70,13 +68,7 @@ const InitialState = {
   }
 };
 
-// class RegisterDoc extends Component {
-//   constructor(data) {
-//     super(data);
-//     this.setState(state => ({ document: { docNumber: data.docNumber } }));
-//     this.onChangePhone = this.onChangePhone.bind(this);
-//   }
-// }
+
 
 function RegisterDoc(props) {
   const classes = myStyles();
@@ -109,13 +101,7 @@ function RegisterDoc(props) {
     }
   }
 
-  function onChangeEmail(e) {
-    setDocument({
-      ...state,
-      person: { ...state.person, email: e.target.value }
-    });
-    // this.setState(state => ({ person: { email: e.target.value } }));
-  }
+  
 
   function onChangeName(e) {
     setDocument({
@@ -124,21 +110,7 @@ function RegisterDoc(props) {
     });
     // this.setState(state => ({ person: { name: e.target.value } }));
   }
-
-  function onChangeLastName(e) {
-    setDocument({
-      ...state,
-      person: { ...state.person, lastName: e.target.value }
-    });
-  }
-
-  function onChangeDocName(e) {
-    setDocument({
-      ...state,
-      document: { ...state.document, docName: e.target.value }
-    });
-  }
-
+ 
   function onChangeDocType(e) {
     debugger;
     setDocument({
