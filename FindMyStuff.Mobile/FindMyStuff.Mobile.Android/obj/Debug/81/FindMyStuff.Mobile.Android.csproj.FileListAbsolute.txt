@@ -347,3 +347,4 @@ C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.And
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\stamp\_GenerateJavaStubs.stamp
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
 C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\obj\Debug\81\stamp\_ResolveLibraryProjectImports.stamp
+C:\Code\Angelo\RikkiPirate\FindMyStuff\FindMyStuff.Mobile\FindMyStuff.Mobile.Android\bin\Debug\FindMyStuff.Mobile.dll.mdb

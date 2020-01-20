@@ -63,6 +63,9 @@ namespace FindMyStuff.Data.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<DocumentType>().HasData(new DocumentType {Id = 1, Type = "Passport"});
+            modelBuilder.Entity<DocumentType>().HasData(new DocumentType {Id = 2, Type = "Driver License"});
+
             modelBuilder.Entity<DocumentXperson>(entity =>
             {
                 entity.ToTable("DocumentXPerson");

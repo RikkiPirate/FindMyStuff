@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     color: theme.palette.text.secondary
   },
+
   textField: {
     width: 200
   },
@@ -36,7 +37,8 @@ function App() {
       documentTypeId: 0,
       picture: ""
     },
-    ServiceResponse: {}
+    ServiceResponse: {},
+    Searched: false
   });
 
   return (
@@ -56,7 +58,8 @@ function App() {
         {state.Data.id > 0 ? (
           <ShowDoc data={state.Data} />
         ) : (
-          <RegisterDoc data={state} show={state.Data.id === 0} />
+          state.Data.id === 0 &&
+          state.searched && <RegisterDoc data={state} show={true} />
         )}
       </header>
     </div>

@@ -1,135 +1,144 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
 
-import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
+import Switch from "@material-ui/core/Switch";
 
-const useStyles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary
-  },
-  textField: {
-    width: 200
-  },
-  margin: {
-    margin: theme.spacing(2)
-  }
-});
+import ModalContact from "./modal";
+import ShowMap from "./../map";
+import FillDropDown from "./../DropDownField";
 
-const DocType = [
-  {
-    text: "passport",
-    value: 1
-  },
-  {
-    text: "Driver license",
-    value: 2
-  }
-];
-
-class ShowDoc extends Component {
-  constructor(data) {
-    super(data);
-    this.state = {
-      id: 0,
-      docNumber: "",
-      docName: "",
-      documentTypeId: 0,
-      picture: ""
-    };
-    //const { docNumber, id, docName, documentTypeId, picture } = data;
-    // this.state =  { docNumber, id, docName, documentTypeId, picture };
-
-    //console.log("from show  data state: ", props);
-  }
-
-  handleChange = event => {
-    const documentTypeId = event.target.value;
-    this.setState({ documentTypeId: documentTypeId });
-    //console.log(this.state);
+function ShowDoc(data) {
+  const initialData = {
+    Data: data,
+    showMore: false
   };
 
-  componentWillMount() {
-    this.setState(this.props);
+  const [state, setState] = useState(initialData);
+ 
+ const myStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3)
+    },
+    paperModal: {
+      position: "absolute",
+      width: 400,
+      backgroundColor: theme.palette.background.paper,
+      border: "2px solid #000",
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3)
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: "center",
+      color: theme.palette.text.secondary
+    },
+    textField: {
+      width: 200
+    },
+    textFieldModal: {
+      width: 150
+    },
+    margin: {
+      margin: theme.spacing(2)
+    },
+    marginModal: {
+      margin: theme.spacing(1)
+    }
+  }));
+
+  const classes = myStyles();
+
+  const handleChange = name => event => {
+    setState({ ...state, showMore: event.target.checked });
+  };
+
+  function showMore(data, classes) {
+    const dxp = data.documentXperson[0];
+    const person = data.documentXperson[0].person;
+    return (
+      <div>
+        {dxp.wasLost && <h3>Lost By:</h3>}
+        {dxp.wasFound && <h3>Found By:</h3>}
+        <TextField
+          label="Name:"
+          id="PersonName"
+          defaultValue={person.name}
+          className={clsx(classes.margin, classes.textField)}
+          InputProps={{
+            readOnly: true
+          }}
+        />
+        <TextField
+          label="Surname:"
+          id="Surname"
+          defaultValue={person.lastName}
+          className={clsx(classes.margin, classes.textField)}
+          InputProps={{
+            readOnly: true
+          }}
+        />
+        <br></br>
+
+        <ModalContact data={state.Data.data} classes={classes}></ModalContact>
+      </div>
+    );
   }
 
-  Showdocument = (data, classes) => {
-    return (
+  const dxp = state.Data.data.documentXperson[0];
+
+  return (
+    <React.Fragment>
       <div className={classes.root}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>
-              <h2>Document Found !!!!{data.docNumber}!!!! </h2>
+              <h1>Document Found !!!!{state.Data.data.docNumber}!!!! </h1>
               <TextField
                 label="Doc number:"
                 id="DocNumber"
-                defaultValue={data.docNumber}
+                defaultValue={state.Data.data.docNumber}
                 className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
                 InputProps={{
                   readOnly: true
                 }}
               />
-
               <TextField
                 label="Doc name:"
                 id="docName"
-                defaultValue={data.docName}
+                defaultValue={state.Data.data.docName}
                 className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
                 InputProps={{
                   readOnly: true
                 }}
               />
               <br></br>
-              <TextField
-                label="Doc type:"
-                id="DocType"
-                select
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
-                helperText="Please select document type"
-                value={this.state.documentTypeId}
-                onChange={this.handleChange}
-              >
-                {DocType.map(option => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.text}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
+              <FillDropDown value={state.Data.data.DocType} edit={true}></FillDropDown>
+             
+              <br></br>
+              <ShowMap lat={dxp.latitude} long={dxp.longitud}></ShowMap>
+              <hr></hr>
+              Show More
+              <Switch
+                checked={state.showMore}
+                onChange={handleChange("")}
+                value="checkedB"
+                color="primary"
+                inputProps={{ "aria-label": "primary checkbox" }}
               />
+              <hr></hr>
+              {state.showMore && showMore(state.Data.data, classes)}
             </Paper>
           </Grid>
         </Grid>
       </div>
-    );
-  };
-
-  render() {
-    const { classes } = this.props;
-    return this.Showdocument(this.state.data, classes);
-  }
+    </React.Fragment>
+  );
 }
-
-export default withStyles(useStyles)(ShowDoc);
+export default ShowDoc;

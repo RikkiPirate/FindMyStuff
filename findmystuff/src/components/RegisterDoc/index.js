@@ -1,14 +1,27 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
+import FillDropDown from "./../DropDownField";
 
-const useStyles = theme => ({
+const useStyles = theme => ({});
+
+const myStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  withoutLabel: {
+    marginTop: theme.spacing(3)
+  },
+  paperModal: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
   },
   paper: {
     padding: theme.spacing(2),
@@ -18,43 +31,129 @@ const useStyles = theme => ({
   textField: {
     width: 200
   },
+  textFieldModal: {
+    width: 150
+  },
   margin: {
     margin: theme.spacing(2)
-  }
-});
-
-const DocType = [
-  {
-    text: "passport",
-    value: 1
   },
-  {
-    text: "Driver license",
-    value: 2
+  marginModal: {
+    margin: theme.spacing(1)
   }
-];
+}));
 
-class RegisterDoc extends Component {
-  state = {
+const InitialState = {
+  document: {
     id: 0,
     docNumber: "",
     docName: "",
     documentTypeId: 0,
     picture: ""
-  };
-
-  constructor(data) {
-    super(data);
-    const { docNumber } = data;
-    this.state = { docNumber };
+  },
+  documentXperson: {
+    id: 0,
+    personId: 0,
+    documentId: 0,
+    wasFound: false,
+    dateFound: Date.now(),
+    wasloosed: false,
+    dateLost: Date.now(),
+    latitude: 0,
+    longitud: 0
+  },
+  person: {
+    id: 0,
+    name: "",
+    lastName: "",
+    email: "",
+    phone: ""
   }
-  handleChange = event => {
-    const documentTypeId = event.target.value;
-    this.setState({ documentTypeId: documentTypeId });
-    console.log(this.state);
-  };
+};
 
-  Createdocument = (data, classes) => {
+// class RegisterDoc extends Component {
+//   constructor(data) {
+//     super(data);
+//     this.setState(state => ({ document: { docNumber: data.docNumber } }));
+//     this.onChangePhone = this.onChangePhone.bind(this);
+//   }
+// }
+
+function RegisterDoc(props) {
+  const classes = myStyles();
+
+  const [state, setDocument] = useState(InitialState);
+
+  function onChange(obj, e) {
+    debugger;
+    switch (obj) {
+      case "person":
+        setDocument({
+          ...state,
+          [obj]: { ...state.person, [e.target.name]: e.target.value }
+        });
+        break;
+      case "document":
+        setDocument({
+          ...state,
+          [obj]: { ...state.document, [e.target.name]: e.target.value }
+        });
+        break;
+      case "documentXperson":
+        setDocument({
+          ...state,
+          [obj]: { ...state.documentXperson, [e.target.name]: e.target.value }
+        });
+        break;
+      default:
+        break;
+    }
+  }
+
+  function onChangeEmail(e) {
+    setDocument({
+      ...state,
+      person: { ...state.person, email: e.target.value }
+    });
+    // this.setState(state => ({ person: { email: e.target.value } }));
+  }
+
+  function onChangeName(e) {
+    setDocument({
+      ...state,
+      person: { ...state.person, name: e.target.value }
+    });
+    // this.setState(state => ({ person: { name: e.target.value } }));
+  }
+
+  function onChangeLastName(e) {
+    setDocument({
+      ...state,
+      person: { ...state.person, lastName: e.target.value }
+    });
+  }
+
+  function onChangeDocName(e) {
+    setDocument({
+      ...state,
+      document: { ...state.document, docName: e.target.value }
+    });
+  }
+
+  function onChangeDocType(e) {
+    debugger;
+    setDocument({
+      ...state,
+      document: { ...state.document, documentTypeId: e.target.value }
+    });
+  }
+
+  if (props.data) {
+    state.document.docNumber = props.data.Data.docNumber
+      ? props.data.Data.docNumber
+      : "";
+  }
+
+  if (props.show) {
     return (
       <div className={classes.root}>
         <Grid container spacing={2}>
@@ -64,18 +163,47 @@ class RegisterDoc extends Component {
               <TextField
                 label="Doc number:"
                 id="DocNumber"
-                defaultValue={this.state.docNumber}
+                defaultValue={state.document.docNumber}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
                   readOnly: true
                 }}
               />
-
               <TextField
-                label="Doc name:"
-                id="docName"
+                label="Name in document:"
+                id="NameDocument"
                 required
+                name="docName"
+                onChange={e => onChange("document", e)}
+                className={clsx(classes.margin, classes.textField)}
+                variant="outlined"
+                InputProps={{
+                  readOnly: false
+                }}
+              />
+              <br></br>
+              <FillDropDown value={0} edit={true} event={onChangeDocType} />
+              GET CORDENATES
+              <hr></hr>
+              Personal Information:
+              <hr></hr>
+              <TextField
+                label="Name:"
+                id="namePerson"
+                name="name"
+                onChange={e => onChange("person", e)}
+                className={clsx(classes.margin, classes.textField)}
+                variant="outlined"
+                InputProps={{
+                  readOnly: false
+                }}
+              />
+              <TextField
+                label="Last name:"
+                id="lastNamePerson"
+                name="lastName"
+                onChange={e => onChange("person", e)}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
@@ -84,74 +212,26 @@ class RegisterDoc extends Component {
               />
               <br></br>
               <TextField
-                label="Doc type:"
-                id="DocType"
-                select
+                label="Email:"
+                id="emailPerson"
+                name="email"
+                onChange={e => onChange("person", e)}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
                   readOnly: false
                 }}
-                helperText="Please select document type"
-                value={this.state.documentTypeId}
-                onChange={this.handleChange}
-              >
-                {DocType.map(option => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.text}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
-              />
-              <br></br>
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
               />
               <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
+                label="Phone:"
+                id="phonePerson"
+                name="phone"
+                onChange={e => onChange("person", e)}
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 InputProps={{
-                  readOnly: true
-                }}
-              />
-              <br></br>
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
-                }}
-              />
-              <TextField
-                label="Doc number:"
-                id="outlined-start-adornment"
-                defaultValue={this.state.docNumber}
-                className={clsx(classes.margin, classes.textField)}
-                variant="outlined"
-                InputProps={{
-                  readOnly: true
+                  readOnly: false,
+                  title: "person"
                 }}
               />
             </Paper>
@@ -159,16 +239,7 @@ class RegisterDoc extends Component {
         </Grid>
       </div>
     );
-  };
-
-  render() {
-    const { classes } = this.props;
-    if (this.props.show) {
-      return this.Createdocument(this.state, classes);
-    } else {
-      return <div></div>;
-    }
   }
 }
 
-export default withStyles(useStyles)(RegisterDoc);
+export default RegisterDoc;

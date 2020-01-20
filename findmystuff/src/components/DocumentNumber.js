@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -47,7 +47,6 @@ function DocNumber(props) {
   };
 
   const handleUpdateClick = () => {
-    // props.setStateApp({ ...state, Data: { id: 1, docNumber: "123" } });
     const url = getUrlSeachDocument(state.Data.docNumber);
 
     fetch(url)
@@ -56,13 +55,17 @@ function DocNumber(props) {
         return message.json();
       })
       .then(dataService => {
+        state.searched = true;
         if (state.ServiceResponse.status > 400) {
           alert("Item not Found.");
+          // document.getElementById("DocNumber").value = state.Data.docNumber;
+          // setState(state => ({ state: { docNumber: state.Data.docNumber } }));
+          // state.Data = state.Data.docNumber;
         } else {
-          debugger;
           state.Data = dataService;
           setState(state);
         }
+
         props.setStateApp(state);
       });
   };
