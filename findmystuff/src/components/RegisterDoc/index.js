@@ -4,6 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
 import FillDropDown from "./../DropDownField";
 
 const myStyles = makeStyles(theme => ({
@@ -37,6 +43,9 @@ const myStyles = makeStyles(theme => ({
   },
   marginModal: {
     margin: theme.spacing(1)
+  },
+  formControl: {
+    margin: theme.spacing(3)
   }
 }));
 
@@ -67,8 +76,6 @@ const InitialState = {
     phone: ""
   }
 };
-
-
 
 function RegisterDoc(props) {
   const classes = myStyles();
@@ -101,16 +108,13 @@ function RegisterDoc(props) {
     }
   }
 
-  
+  // function onChangeName(e) {
+  //   setDocument({
+  //     ...state,
+  //     person: { ...state.person, name: e.target.value }
+  //   });
+  //  }
 
-  function onChangeName(e) {
-    setDocument({
-      ...state,
-      person: { ...state.person, name: e.target.value }
-    });
-    // this.setState(state => ({ person: { name: e.target.value } }));
-  }
- 
   function onChangeDocType(e) {
     debugger;
     setDocument({
@@ -118,6 +122,29 @@ function RegisterDoc(props) {
       document: { ...state.document, documentTypeId: e.target.value }
     });
   }
+
+  const onChangeRadio = e => {
+    if (e.target.value === "Found") {
+      setDocument({
+        ...state,
+        documentXperson: {
+          ...state.documentXperson,
+          wasFound: e.target.value,
+          wasloosed: !e.target.value
+        }
+      });
+    }
+    if (e.target.value === "Lost") {
+      setDocument({
+        ...state,
+        documentXperson: {
+          ...state.documentXperson,
+          wasloosed: e.target.value,
+          wasFound: !e.target.value
+        }
+      });
+    }
+  };
 
   if (props.data) {
     state.document.docNumber = props.data.Data.docNumber
@@ -131,6 +158,7 @@ function RegisterDoc(props) {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>
+              {/* <FormControl component="fieldset" className={classes.formControl}> */}
               <h4>Create Document</h4>
               <TextField
                 label="Doc number:"
@@ -157,6 +185,27 @@ function RegisterDoc(props) {
               <br></br>
               <FillDropDown value={0} edit={true} event={onChangeDocType} />
               GET CORDENATES
+              <hr></hr>
+              <FormLabel component="legend">You:</FormLabel>
+              <RadioGroup
+                aria-label="gender"
+                name="gender1"
+                onChange={onChangeRadio}
+                
+              >
+                <FormControlLabel
+                  value="Found"
+                  control={<Radio />}
+                  label="Found"
+                  labelPlacement="Start"
+                />
+                <FormControlLabel
+                  value="Lost"
+                  control={<Radio />}
+                  label="Loose"
+                  labelPlacement="end"
+                />
+              </RadioGroup>
               <hr></hr>
               Personal Information:
               <hr></hr>
@@ -206,6 +255,7 @@ function RegisterDoc(props) {
                   title: "person"
                 }}
               />
+              {/* </FormControl> */}
             </Paper>
           </Grid>
         </Grid>

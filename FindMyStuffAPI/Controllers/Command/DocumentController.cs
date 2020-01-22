@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using FindMyStuff.Data.Dal.Interfaces;
 using FindMyStuff.Data.Dal.Persistence;
 using FindMyStuff.Data.Models;
@@ -21,14 +22,30 @@ namespace Controllers.Command
         [HttpPost]
         public void Post([FromBody] Document document)
         {
-            Document doc = _documentDal.CreateDocument(document);
-            if (doc.Id>0)
+            var documentXperson = document.DocumentXperson;
+            if (!documentXperson.Any())
             {
-                Ok(doc);
+                UnprocessableEntity(documentXperson);
             }
             else
             {
-                UnprocessableEntity(doc);
+                var person = documentXperson.First().Person;
+                if (person == null)
+                {
+                    UnprocessableEntity(person);
+                }
+                else
+                {
+                    var doc = _documentDal.CreateDocument(document, documentXperson.First(), person);
+                    if (doc.Id > 0)
+                    {
+                        Ok(doc);
+                    }
+                    else
+                    {
+                        UnprocessableEntity(doc);
+                    }
+                }
             }
         }
 
