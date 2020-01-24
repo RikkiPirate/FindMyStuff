@@ -4,11 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 
 import FillDropDown from "./../DropDownField";
 
@@ -39,13 +35,14 @@ const myStyles = makeStyles(theme => ({
     width: 150
   },
   margin: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(1)
   },
   marginModal: {
     margin: theme.spacing(1)
   },
   formControl: {
-    margin: theme.spacing(3)
+    margin: theme.spacing(1),
+    display: "inline-block!"
   }
 }));
 
@@ -62,8 +59,8 @@ const InitialState = {
     personId: 0,
     documentId: 0,
     wasFound: false,
-    dateFound: Date.now(),
-    wasloosed: false,
+    dateFound: null,
+    wasloosed: true,
     dateLost: Date.now(),
     latitude: 0,
     longitud: 0
@@ -81,6 +78,7 @@ function RegisterDoc(props) {
   const classes = myStyles();
 
   const [state, setDocument] = useState(InitialState);
+  const [checked, setchecked] = useState(false);
 
   function onChange(obj, e) {
     debugger;
@@ -108,13 +106,6 @@ function RegisterDoc(props) {
     }
   }
 
-  // function onChangeName(e) {
-  //   setDocument({
-  //     ...state,
-  //     person: { ...state.person, name: e.target.value }
-  //   });
-  //  }
-
   function onChangeDocType(e) {
     debugger;
     setDocument({
@@ -123,24 +114,47 @@ function RegisterDoc(props) {
     });
   }
 
-  const onChangeRadio = e => {
-    if (e.target.value === "Found") {
+  const onChangeRadio = name => e => {
+    setchecked(x => !x);
+
+    if (e.target.checked) {
       setDocument({
         ...state,
         documentXperson: {
           ...state.documentXperson,
-          wasFound: e.target.value,
-          wasloosed: !e.target.value
+          wasloosed: !state.documentXperson.wasloosed,
+          wasFound: !state.documentXperson.wasFound
+        }
+      });
+    } else {
+      setDocument({
+        ...state,
+        documentXperson: {
+          ...state.documentXperson,
+          wasloosed: !state.documentXperson.wasloosed,
+          wasFound: !state.documentXperson.wasFound
         }
       });
     }
-    if (e.target.value === "Lost") {
+
+    if (state.documentXperson.wasloosed) {
       setDocument({
         ...state,
         documentXperson: {
           ...state.documentXperson,
-          wasloosed: e.target.value,
-          wasFound: !e.target.value
+          dateFound: null,
+          dateLost: Date.now()
+        }
+      });
+    }
+
+    if (state.documentXperson.wasFound) {
+      setDocument({
+        ...state,
+        documentXperson: {
+          ...state.documentXperson,
+          dateFound: Date.now(),
+          dateLost: null
         }
       });
     }
@@ -158,8 +172,17 @@ function RegisterDoc(props) {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>
-              {/* <FormControl component="fieldset" className={classes.formControl}> */}
-              <h4>Create Document</h4>
+              <h4>Document</h4>
+              Lost
+              <Switch
+                checked={checked}
+                onChange={onChangeRadio("")}
+                value="something"
+                color="primary"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+              Found
+              <hr></hr>
               <TextField
                 label="Doc number:"
                 id="DocNumber"
@@ -184,28 +207,8 @@ function RegisterDoc(props) {
               />
               <br></br>
               <FillDropDown value={0} edit={true} event={onChangeDocType} />
-              GET CORDENATES
+              GetCoordenates
               <hr></hr>
-              <FormLabel component="legend">You:</FormLabel>
-              <RadioGroup
-                aria-label="gender"
-                name="gender1"
-                onChange={onChangeRadio}
-                
-              >
-                <FormControlLabel
-                  value="Found"
-                  control={<Radio />}
-                  label="Found"
-                  labelPlacement="Start"
-                />
-                <FormControlLabel
-                  value="Lost"
-                  control={<Radio />}
-                  label="Loose"
-                  labelPlacement="end"
-                />
-              </RadioGroup>
               <hr></hr>
               Personal Information:
               <hr></hr>
@@ -255,7 +258,6 @@ function RegisterDoc(props) {
                   title: "person"
                 }}
               />
-              {/* </FormControl> */}
             </Paper>
           </Grid>
         </Grid>

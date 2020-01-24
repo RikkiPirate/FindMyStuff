@@ -37,7 +37,10 @@ function DocNumber(props) {
   const [state, setState] = useState(initialData);
 
   const handleOnChange = e => {
-    state.Data.docNumber = e.target.value;
+    setState({
+      ...initialData,
+      Data: { ...initialData.Data, docNumber: e.target.value }
+    });
   };
 
   const handleCleanClick = () => {
@@ -57,10 +60,11 @@ function DocNumber(props) {
       .then(dataService => {
         state.searched = true;
         if (state.ServiceResponse.status > 400) {
-          alert("Item not Found.");
-          // document.getElementById("DocNumber").value = state.Data.docNumber;
-          // setState(state => ({ state: { docNumber: state.Data.docNumber } }));
-          // state.Data = state.Data.docNumber;
+          // alert("Item not Found.");
+          setState({
+            ...initialData,
+            Data: { ...initialData.Data, id: -1 }
+          });
         } else {
           state.Data = dataService;
           setState(state);
@@ -82,6 +86,7 @@ function DocNumber(props) {
         id="DocSearchControl"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
+        defaultValue={state.Data.docNumber}
         onChange={handleOnChange}
       />
       <br></br>

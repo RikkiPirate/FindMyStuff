@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import clsx from "clsx";
@@ -38,7 +38,7 @@ function FillDropDown(props) {
   const classes = myStyles();
   const [DocType, setDocType] = React.useState(DocTypeOriginal);
 
-  const handleChange = (e,event) => {
+  const handleChange = (e, event) => {
     setDocType(e.target.value);
 
     if (props.event) {
@@ -47,6 +47,10 @@ function FillDropDown(props) {
   };
   const [canEdit, setCanEdit] = React.useState(props.edit);
   const { data, error, isLoading } = useAsync({ promiseFn: getComboData });
+
+  if (canEdit !== props.edit) {
+    setCanEdit(x => !x);
+  }
 
   if (isLoading) return "Loading...";
   if (error) return `Something went wrong: ${error.message}`;
