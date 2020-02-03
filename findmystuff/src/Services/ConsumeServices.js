@@ -1,5 +1,3 @@
-import { timeout } from "q";
-
 export const post = "POST";
 export const get = "GET";
 export const put = "PUT";
@@ -8,10 +6,10 @@ export const noCors = "no-cors";
 export const cors = "cors";
 export const same = "same-origin";
 
-function PostData(url, data, verb = get, mode = cors) {
+function postData(url, data, verb = get, mode = cors) {
   // Default options are marked with *
 
-  const response = fetch(url, {
+  fetch(url, {
     method: verb, // *GET, POST, PUT, DELETE, etc.
     mode: mode, // no-cors, *cors, same-origin
     //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -27,10 +25,11 @@ function PostData(url, data, verb = get, mode = cors) {
       return message.json();
     })
     .then(dataService => {
-      timeout(1000);
+      // asdfasdf
+      // timeout(1000);
       return dataService.json();
     });
-  return response; // parses JSON response into native JavaScript objects
+ // parses JSON response into native JavaScript objects
 }
 
-export default PostData;
+export default postData;

@@ -18,14 +18,25 @@ namespace FindMyStuff.Data.Dal.Persistence
         public Document CreateDocument(Document document, DocumentXperson documentXPerson, Person person)
         {
 
-            var x = _dbContext.Document.FirstOrDefault(d =>
+            var documentSearch = _dbContext.Document.FirstOrDefault(d =>
                 string.Equals(d.DocNumber, document.DocNumber, StringComparison.OrdinalIgnoreCase));
-            if (x != null) return x;
+            if (documentSearch != null) return documentSearch;
+
+            var personSearch = _dbContext.Person.FirstOrDefault(p =>
+                p.Name == person.Name &&
+                p.LastName == person.LastName &&
+                p.Email == person.Email &&
+                p.Phone == person.Phone);
+            if (personSearch != null) return documentSearch;
+
+            //var newPerson = 
+            //_dbContext.Person.Add(person);
+            //_dbContext.SaveChanges();
 
             var DocumentXperson = new DocumentXperson
             {
-                DateFound = documentXPerson.WasFound.GetValueOrDefault() ? documentXPerson.DateFound : null,
-                DateLost = documentXPerson.Wasloosed.GetValueOrDefault() ? documentXPerson.DateLost : null,
+                DateFound = documentXPerson.WasFound.GetValueOrDefault() ? DateTime.Now : (DateTime?)null,
+                DateLost = documentXPerson.Wasloosed.GetValueOrDefault() ? DateTime.Now : (DateTime?)null,
                 Latitude = documentXPerson.Latitude,
                 Longitud = documentXPerson.Longitud,
                 Wasloosed = documentXPerson.Wasloosed.GetValueOrDefault(),
@@ -44,8 +55,8 @@ namespace FindMyStuff.Data.Dal.Persistence
                 DocName = document.DocName,
                 DocNumber = document.DocNumber,
                 Picture = document.Picture,
-                DocumentType = document.DocumentType,
-                DocumentXperson=new List<DocumentXperson> {DocumentXperson}
+                DocumentTypeId = document.DocumentTypeId,
+                DocumentXperson = new List<DocumentXperson> { DocumentXperson }
             };
 
             _dbContext.Document.Add(newDocument);

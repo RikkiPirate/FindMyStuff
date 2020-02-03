@@ -19,11 +19,39 @@ namespace FindMyStuff.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("FindMyStuff.Data.Models.AppConfigurationDataBase", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("JsonValue");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppConfigurationDataBase");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4086794f-e470-46f6-ba3d-a9534ff0ef51"),
+                            IsActive = true,
+                            Name = "ApiGoogleMaps",
+                            Value = "AIzaSyDlHVTgZ4eMfXiMIRy6VUn_yIAlnKc2JEs"
+                        });
+                });
+
             modelBuilder.Entity("FindMyStuff.Data.Models.Document", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("DocName")
                         .IsRequired()
@@ -35,7 +63,7 @@ namespace FindMyStuff.Data.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
-                    b.Property<int>("DocumentTypeId");
+                    b.Property<Guid>("DocumentTypeId");
 
                     b.Property<string>("Picture")
                         .HasColumnName("picture")
@@ -50,7 +78,8 @@ namespace FindMyStuff.Data.Migrations
 
             modelBuilder.Entity("FindMyStuff.Data.Models.DocumentType", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -64,19 +93,20 @@ namespace FindMyStuff.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = new Guid("b94c602b-fa28-4580-abe7-215e06a4c31a"),
                             Type = "Passport"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = new Guid("7d1d24e7-a1f5-4347-94ab-8b1d53ab86da"),
                             Type = "Driver License"
                         });
                 });
 
             modelBuilder.Entity("FindMyStuff.Data.Models.DocumentXperson", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("DateFound")
                         .HasColumnType("date");
@@ -84,13 +114,15 @@ namespace FindMyStuff.Data.Migrations
                     b.Property<DateTime?>("DateLost")
                         .HasColumnType("date");
 
-                    b.Property<long>("DocumentId");
+                    b.Property<Guid>("DocumentId");
 
-                    b.Property<decimal?>("Latitude");
+                    b.Property<decimal?>("Latitude")
+                        .HasColumnType("decimal(12,9)");
 
-                    b.Property<decimal?>("Longitud");
+                    b.Property<decimal?>("Longitud")
+                        .HasColumnType("decimal(12,9)");
 
-                    b.Property<long>("PersonId");
+                    b.Property<Guid>("PersonId");
 
                     b.Property<bool?>("WasFound");
 
@@ -107,7 +139,8 @@ namespace FindMyStuff.Data.Migrations
 
             modelBuilder.Entity("FindMyStuff.Data.Models.Person", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
                         .IsRequired()

@@ -27,7 +27,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const dotenv = require('dotenv');
 function App() {
+  require("dotenv").config();
   const classes = useStyles();
   const [state, setState] = useState({
     Data: {
@@ -55,7 +57,7 @@ function App() {
         </div>
         <br></br>
 
-        {state.Data.id > 0 ? (
+        {state.Data.id ? (
           <ShowDoc data={state.Data} />
         ) : (
           state.Data.id === 0 &&

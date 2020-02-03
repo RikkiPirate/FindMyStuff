@@ -7,12 +7,16 @@ namespace FindMyStuff.Data.Models
 {
     public partial class DocumentXperson
     {
+        public DocumentXperson()
+        {
+            Id = Guid.NewGuid();
+        }
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [ForeignKey("Person")]
-        public long PersonId { get; set; }
+        public Guid PersonId { get; set; }
         [ForeignKey("Document")]
-        public long DocumentId { get; set; }
+        public Guid DocumentId { get; set; }
         public bool? WasFound { get; set; }
         public DateTime? DateFound { get; set; }
         public bool? Wasloosed { get; set; }

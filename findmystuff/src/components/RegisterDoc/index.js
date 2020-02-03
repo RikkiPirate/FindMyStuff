@@ -5,8 +5,12 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Switch from "@material-ui/core/Switch";
+import Button from "@material-ui/core/Button";
 
+import { post, cors } from "./../../Services/ConsumeServices";
+import { getUrlSaveDocument } from "./../../Services/ServiceDocuments";
 import FillDropDown from "./../DropDownField";
+import MapsGetCoordenates from "./MapGetCoordenates";
 
 const myStyles = makeStyles(theme => ({
   root: {
@@ -46,27 +50,29 @@ const myStyles = makeStyles(theme => ({
   }
 }));
 
+const uuid = require("uuid");
+
 const InitialState = {
   document: {
-    id: 0,
+    id: uuid.v4(),
     docNumber: "",
     docName: "",
-    documentTypeId: 0,
+    documentTypeId: uuid.v4(),
     picture: ""
   },
   documentXperson: {
-    id: 0,
-    personId: 0,
-    documentId: 0,
+    id: uuid.v4(),
+    personId: uuid.v4(),
+    documentId: uuid.v4(),
     wasFound: false,
     dateFound: null,
     wasloosed: true,
-    dateLost: Date.now(),
+    dateLost: null,
     latitude: 0,
     longitud: 0
   },
   person: {
-    id: 0,
+    id: uuid.v4(),
     name: "",
     lastName: "",
     email: "",
@@ -81,7 +87,6 @@ function RegisterDoc(props) {
   const [checked, setchecked] = useState(false);
 
   function onChange(obj, e) {
-    debugger;
     switch (obj) {
       case "person":
         setDocument({
@@ -107,7 +112,6 @@ function RegisterDoc(props) {
   }
 
   function onChangeDocType(e) {
-    debugger;
     setDocument({
       ...state,
       document: { ...state.document, documentTypeId: e.target.value }
@@ -136,28 +140,40 @@ function RegisterDoc(props) {
         }
       });
     }
+  };
 
-    if (state.documentXperson.wasloosed) {
-      setDocument({
-        ...state,
-        documentXperson: {
-          ...state.documentXperson,
-          dateFound: null,
-          dateLost: Date.now()
-        }
-      });
-    }
+  const onSaveClick = e => {
+    const url = getUrlSaveDocument();
+    const document = state.document;
+    const person = state.person;
+    let documentXperson = state.documentXperson;
+    documentXperson.person = person;
+    let data = document;
+    data.documentXperson = [state.documentXperson];
+    console.log(data);
 
-    if (state.documentXperson.wasFound) {
-      setDocument({
-        ...state,
-        documentXperson: {
-          ...state.documentXperson,
-          dateFound: Date.now(),
-          dateLost: null
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var requestOptions = {
+      method: post,
+      headers: myHeaders,
+      body: JSON.stringify(data),
+      redirect: "follow",
+      mode: cors
+    };
+    fetch(url, requestOptions)
+      .then(message => {
+        return message.json();
+      })
+      .then(dataService => {
+        debugger;
+        if (dataService.id) {
+          alert("saved information Correctly");
+          document.getElementById("btnClear").click();
         }
-      });
-    }
+        return dataService;
+      })
+      .catch(error => console.log("error", error));
   };
 
   if (props.data) {
@@ -172,8 +188,8 @@ function RegisterDoc(props) {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>
-              <h4>Document</h4>
-              Lost
+              <h3>Document</h3>
+              Lost &larr;
               <Switch
                 checked={checked}
                 onChange={onChangeRadio("")}
@@ -181,7 +197,7 @@ function RegisterDoc(props) {
                 color="primary"
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
-              Found
+              &rarr; Found
               <hr></hr>
               <TextField
                 label="Doc number:"
@@ -207,8 +223,8 @@ function RegisterDoc(props) {
               />
               <br></br>
               <FillDropDown value={0} edit={true} event={onChangeDocType} />
-              GetCoordenates
-              <hr></hr>
+              <br></br>
+              <MapsGetCoordenates></MapsGetCoordenates>
               <hr></hr>
               Personal Information:
               <hr></hr>
@@ -258,6 +274,10 @@ function RegisterDoc(props) {
                   title: "person"
                 }}
               />
+              <hr></hr>
+              <Button variant="contained" color="primary" onClick={onSaveClick}>
+                Save
+              </Button>
             </Paper>
           </Grid>
         </Grid>

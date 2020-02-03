@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import "../App.css";
-import getUrlSeachDocument from "./../Services/ServiceDocuments";
+import { getUrlSeachDocument } from "./../Services/ServiceDocuments";
 
 function DocNumber(props) {
   const myStyles = makeStyles(theme => ({
@@ -43,6 +43,12 @@ function DocNumber(props) {
     });
   };
 
+  const handleOnKeyDown = e => {
+    if (e.key === "Enter") {
+      handleUpdateClick();
+    }
+  };
+
   const handleCleanClick = () => {
     setState(initialData);
     props.setStateApp(initialData);
@@ -50,28 +56,32 @@ function DocNumber(props) {
   };
 
   const handleUpdateClick = () => {
-    const url = getUrlSeachDocument(state.Data.docNumber);
+    if (!state.Data.docNumber) {
+      alert("require a document");
+    } else {
+      const url = getUrlSeachDocument(state.Data.docNumber);
 
-    fetch(url)
-      .then(message => {
-        state.ServiceResponse = message;
-        return message.json();
-      })
-      .then(dataService => {
-        state.searched = true;
-        if (state.ServiceResponse.status > 400) {
-          // alert("Item not Found.");
-          setState({
-            ...initialData,
-            Data: { ...initialData.Data, id: -1 }
-          });
-        } else {
-          state.Data = dataService;
-          setState(state);
-        }
+      fetch(url)
+        .then(message => {
+          state.ServiceResponse = message;
+          return message.json();
+        })
+        .then(dataService => {
+          state.searched = true;
+          if (state.ServiceResponse.status > 400) {
+            // alert("Item not Found.");
+            setState({
+              ...initialData,
+              Data: { ...initialData.Data, id: -1 }
+            });
+          } else {
+            state.Data = dataService;
+            setState(state);
+          }
 
-        props.setStateApp(state);
-      });
+          props.setStateApp(state);
+        });
+    }
   };
 
   const classes = myStyles();
@@ -88,6 +98,7 @@ function DocNumber(props) {
         variant="outlined"
         defaultValue={state.Data.docNumber}
         onChange={handleOnChange}
+        onKeyDown={handleOnKeyDown}
       />
       <br></br>
       {state.Data.id === 0 && (
@@ -96,7 +107,12 @@ function DocNumber(props) {
         </Button>
       )}
       {state.Data.id !== 0 && (
-        <Button variant="contained" color="primary" onClick={handleCleanClick}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleCleanClick}
+          id="btnClear"
+        >
           Clear
         </Button>
       )}

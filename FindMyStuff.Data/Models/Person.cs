@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FindMyStuff.Data.Models
 {
@@ -8,10 +9,11 @@ namespace FindMyStuff.Data.Models
     {
         public Person()
         {
+            Id = Guid.NewGuid();
             DocumentXperson = new HashSet<DocumentXperson>();
         }
         [Key]
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

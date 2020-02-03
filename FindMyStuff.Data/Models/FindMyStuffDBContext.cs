@@ -17,6 +17,7 @@ namespace FindMyStuff.Data.Models
         public virtual DbSet<DocumentType> DocumentType { get; set; }
         public virtual DbSet<DocumentXperson> DocumentXperson { get; set; }
         public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<AppConfigurationDataBase> AppConfigurationDataBase { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -55,27 +56,33 @@ namespace FindMyStuff.Data.Models
 
             modelBuilder.Entity<DocumentType>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                      .IsRequired()
+                      .HasMaxLength(50)
+                      .IsUnicode(false);
             });
 
-            modelBuilder.Entity<DocumentType>().HasData(new DocumentType {Id = 1, Type = "Passport"});
-            modelBuilder.Entity<DocumentType>().HasData(new DocumentType {Id = 2, Type = "Driver License"});
+            modelBuilder.Entity<DocumentType>().HasData(new DocumentType { Id = Guid.NewGuid(), Type = "Passport" });
+            modelBuilder.Entity<DocumentType>().HasData(new DocumentType { Id = Guid.NewGuid(), Type = "Driver License" });
+
+            modelBuilder.Entity<AppConfigurationDataBase>(entity =>
+            {
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                entity.Property(e => e.IsActive)
+                    .IsRequired();
+
+            });
+
+            modelBuilder.Entity<AppConfigurationDataBase>().HasData(new AppConfigurationDataBase { Id = Guid.NewGuid(), IsActive = true, Name = "ApiGoogleMaps", Value = "AIzaSyDlHVTgZ4eMfXiMIRy6VUn_yIAlnKc2JEs" });
 
             modelBuilder.Entity<DocumentXperson>(entity =>
             {
                 entity.ToTable("DocumentXPerson");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.DateFound).HasColumnType("date");
-
                 entity.Property(e => e.DateLost).HasColumnType("date");
-
                 entity.HasOne(d => d.Document)
                     .WithMany(p => p.DocumentXperson)
                     .HasForeignKey(d => d.DocumentId)
@@ -87,12 +94,13 @@ namespace FindMyStuff.Data.Models
                     .HasForeignKey(d => d.PersonId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_DocumentXPerson_Person");
+
+                entity.Property(e => e.Latitude).HasColumnType("decimal(12,9)");
+                entity.Property(e => e.Longitud).HasColumnType("decimal(12,9)");
             });
 
             modelBuilder.Entity<Person>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
                     .IsUnicode(false);

@@ -33,7 +33,10 @@ namespace FindMyStuffAPI
                     builder =>
                     {
                         builder.WithOrigins("http://localhost",
-                            "https://localhost:44333").AllowAnyOrigin();
+                            "https://localhost:44333")
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
                     });
                 //options.AddPolicy("AllowAllHeaders",
                 //    builder =>

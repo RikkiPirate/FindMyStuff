@@ -9,17 +9,18 @@ namespace FindMyStuff.Data.Models
     {
         public Document()
         {
+            Id = Guid.NewGuid();
             DocumentXperson = new HashSet<DocumentXperson>();
         }
         [Key]
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string DocNumber { get; set; }
         [Required]
         public string DocName { get; set; }
         [ForeignKey("DocumentType")]
         [Required]
-        public int DocumentTypeId { get; set; }
+        public Guid DocumentTypeId { get; set; }
         public string Picture { get; set; }
 
         public virtual DocumentType DocumentType { get; set; }

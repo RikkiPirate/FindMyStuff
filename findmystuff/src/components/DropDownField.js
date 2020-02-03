@@ -55,7 +55,6 @@ function FillDropDown(props) {
   if (isLoading) return "Loading...";
   if (error) return `Something went wrong: ${error.message}`;
   if (data) {
-    console.log("data", data);
     return (
       <React.Fragment>
         {canEdit ? (

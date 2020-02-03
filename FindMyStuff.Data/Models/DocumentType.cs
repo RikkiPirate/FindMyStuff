@@ -8,10 +8,11 @@ namespace FindMyStuff.Data.Models
     {
         public DocumentType()
         {
+            Id=  Guid.NewGuid();
             Document = new HashSet<Document>();
         }
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string Type { get; set; }
 
